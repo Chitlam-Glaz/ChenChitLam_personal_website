@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artwork - My Portfolio</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/artwork.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Fonts – Roboto (optional, matches your style.css) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+                <img src="file/Glaz_logo.jpg" alt="Glaz_logo" style="height: 40px;">
+            </a>
+            <!-- Toggler for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Menu items -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutme.html">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="artwork.html">Artwork</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="datavis.html">Data Visualization</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-lg-3" href="#contact">Find me now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- ====================== 2D PIE CHART ====================== -->
+
+<section id="vis-piechart" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">This is my work section</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <canvas id="myPieChart" height="300"></canvas>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====================== ARTWORK SECTIONS ====================== -->
+
+<!-- ==================== PHOTOGRAPHY – 2×2 THUMBNAIL IMAGES ==================== -->
+<section id="photography" class="gallery py-5 bg-light-gray">
+    <div class="container">
+        <h2 class="text-center mb-5">Photography – Video Showcase</h2>
+
+        <!-- 2×2 Grid -->
+        <div class="row g-4 justify-content-center">
+
+            <!-- Video 1 -->
+            <div class="col-lg-6 col-md-6 col-12">
+                <figure class="video-wrapper video-sm">
+                    <a href="https://youtu.be/t24A49olJPc" target="_blank">
+                        <img src="https://img.youtube.com/vi/t24A49olJPc/0.jpg" alt="Alone Video Thumbnail" class="img-fluid rounded shadow">
+                    </a>
+                    <figcaption class="mt-2 text-center fw-medium">Alone</figcaption>
+                </figure>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="col-lg-6 col-md-6 col-12">
+                <figure class="video-wrapper video-sm">
+                    <a href="https://youtu.be/rTZLBmtAgUw" target="_blank">
+                        <img src="https://img.youtube.com/vi/rTZLBmtAgUw/0.jpg" alt="Endroll Video Thumbnail" class="img-fluid rounded shadow">
+                    </a>
+                    <figcaption class="mt-2 text-center fw-medium">Endroll</figcaption>
+                </figure>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="col-lg-6 col-md-6 col-12">
+                <figure class="video-wrapper video-sm">
+                    <a href="https://youtu.be/owt2zUlmzNw" target="_blank">
+                        <img src="https://img.youtube.com/vi/owt2zUlmzNw/0.jpg" alt="Headphone Advertisement Video Thumbnail" class="img-fluid rounded shadow">
+                    </a>
+                    <figcaption class="mt-2 text-center fw-medium">Headphone Advertisement</figcaption>
+                </figure>
+            </div>
+
+            <!-- Video 4 -->
+            <div class="col-lg-6 col-md-6 col-12">
+                <figure class="video-wrapper video-sm">
+                    <a href="https://youtu.be/o9D6RYTrso4" target="_blank">
+                        <img src="https://img.youtube.com/vi/o9D6RYTrso4/0.jpg" alt="Higher Diploma Promotion Video Thumbnail" class="img-fluid rounded shadow">
+                    </a>
+                    <figcaption class="mt-2 text-center fw-medium">Higher Diploma Promotion</figcaption>
+                </figure>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ==================== DRAWING & ANIMATION (ANIMATION CENTERED) ==================== -->
+<section id="drawing-animation" class="gallery py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Drawing & Animation</h2>
+
+        <!-- 3 items in one row – ANIMATION IN CENTER -->
+        <div class="row g-5 justify-content-center align-items-center">
+
+            <!-- Poster 1 (Left) -->
+            <div class="col-lg-4 col-md-6 col-12 order-lg-1 order-1">
+                <figure class="text-center">
+                    <img src="file/mi7.jpg" alt="Poster 1" class="img-fluid rounded shadow media-item-lg">
+                    <figcaption class="mt-3 fw-medium">Digital Poster – "MI7"</figcaption>
+                </figure>
+            </div>
+
+            <!-- Animation (Center) -->
+            <div class="col-lg-4 col-md-6 col-12 order-lg-2 order-3 d-flex justify-content-center">
+                <figure class="video-wrapper video-lg">
+                    <video controls preload="metadata" poster="file/anim_poster.jpg">
+                        <source src="file/animation.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <figcaption class="mt-3 text-center fw-medium">2D Animation – "Pet Protect Association"</figcaption>
+                </figure>
+            </div>
+
+            <!-- Poster 2 (Right) -->
+            <div class="col-lg-4 col-md-6 col-12 order-lg-3 order-2">
+                <figure class="text-center">
+                    <img src="file/poster2.jpg" alt="Poster 2" class="img-fluid rounded shadow media-item-lg">
+                    <figcaption class="mt-3 fw-medium">Hand-Drawn Poster – "Eliet"</figcaption>
+                </figure>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ==================== INTERACTIVE SECTION – 2×2 GRID ==================== -->
+<section id="interactive" class="gallery py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Interactive</h2>
+
+        <!-- 2×2 Grid: 2 per row -->
+        <div class="row g-5 justify-content-center">
+
+            <!-- Row 1 -->
+            <!-- 1. 360 Tour -->
+            <div class="col-lg-6 col-md-6 col-12">
+                <figure class="text-center position-relative">
+                    <a href="https://kuula.co/post/n1/collection/7Zvdy" target="_blank" class="d-block">
+                        <img src="file/360tour.png" alt="360 Tour" class="img-fluid rounded shadow media-item-2x2">
+                        <div class="overlay-icon">
+                            <i class="fas fa-vr-cardboard fa-2x text-white"></i>
+                        </div>
+                    </a>
+                    <figcaption class="mt-3 fw-medium">360° Virtual Tour</figcaption>
+                </figure>
+            </div>
+
+            <!-- 2. App Design -->
+            <div class="col-lg-6 col-md-6 col-12">
+                <figure class="text-center">
+                    <img src="file/app_design.png" alt="App Design" class="img-fluid rounded shadow media-item-2x2">
+                    <figcaption class="mt-3 fw-medium">Mobile App UI</figcaption>
+                </figure>
+            </div>
+
+            <!-- Row 2 -->
+            <!-- 3. Web Design -->
+            <div class="col-lg-6 col-md-6 col-12">
+                <figure class="text-center">
+                    <img src="file/webdesign.png" alt="Web Design" class="img-fluid rounded shadow media-item-2x2">
+                    <figcaption class="mt-3 fw-medium">Responsive Website</figcaption>
+                </figure>
+            </div>
+
+            <!-- 4. 3D Modeling -->
+            <div class="col-lg-6 col-md-6 col-12">
+                <figure class="text-center">
+                    <img src="file/3d_model.png" alt="3D Modeling" class="img-fluid rounded shadow media-item-2x2">
+                    <figcaption class="mt-3 fw-medium">3D Product Model</figcaption>
+                </figure>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="bg-dark text-white text-center py-5">
+    <div class="container">
+        <p class="mb-0 fs-5">© 2025 Chen Chit Lam. All Rights Reserved.</p>
+        <div class="mt-3">
+            <a href="#" class="text-white me-4 fs-4"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-white me-4 fs-4"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="text-white fs-4"><i class="fab fa-github"></i></a>
+        </div>
+    </div>
+</footer>
+
+    <!-- Bootstrap JS and Popper.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <script src="js/piechart.js"></script>
+    <!-- Font Awesome for Social Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

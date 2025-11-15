@@ -1,0 +1,95 @@
+/* -------------------------------------------------
+   Global gallery helpers
+   ------------------------------------------------- */
+.gallery {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* -------------------------------------------------
+   1. PHOTOGRAPHY – THUMBNAIL IMAGES (2×2 grid)
+   ------------------------------------------------- */
+.video-wrapper.video-sm {
+    position: relative;
+    width: 100%;
+    /* 16:9 ratio – change to 75% for 4:3 if you prefer */
+    padding-bottom: 56.25%;   /* 9/16 * 100% */
+    overflow: hidden;
+    border-radius: .5rem;     /* matches .rounded */
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+    background: #000;        /* fallback while image loads */
+}
+
+.video-wrapper.video-sm > a {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: block;
+    text-decoration: none;
+}
+
+.video-wrapper.video-sm img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;       /* fill container, keep ratio */
+    transition: transform .3s ease;
+}
+
+.video-wrapper.video-sm:hover img {
+    transform: scale(1.05);
+}
+
+/* Caption – keep same spacing as before */
+.video-wrapper.video-sm + figcaption,
+.video-wrapper.video-sm figcaption {
+    margin-top: .75rem;
+    font-weight: 500;
+    color: #333;
+}
+
+/* -------------------------------------------------
+   2. DRAWING & ANIMATION – keep existing styles
+   ------------------------------------------------- */
+.media-item-lg {
+    max-height: 400px;
+    object-fit: contain;
+}
+
+/* -------------------------------------------------
+   3. INTERACTIVE – 2×2 grid (already OK)
+   ------------------------------------------------- */
+.media-item-2x2 {
+    max-height: 300px;
+    object-fit: cover;
+}
+
+/* -------------------------------------------------
+   4. OPTIONAL: Play-icon overlay (nice touch)
+   ------------------------------------------------- */
+.video-wrapper.video-sm::before {
+    content: "\f04b";                     /* FontAwesome play triangle */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    color: rgba(255,255,255,.8);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity .3s ease;
+    pointer-events: none;
+}
+
+.video-wrapper.video-sm:hover::before {
+    opacity: 1;
+}
+
+/* -------------------------------------------------
+   5. Responsive tweaks
+   ------------------------------------------------- */
+@media (max-width: 576px) {
+    .video-wrapper.video-sm {
+        padding-bottom: 75%;   /* 4:3 on tiny screens */
+    }
+}

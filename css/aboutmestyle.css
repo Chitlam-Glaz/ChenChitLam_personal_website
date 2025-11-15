@@ -1,0 +1,351 @@
+/* ========================================
+   Global & Core Styles
+   ======================================== */
+html, body {
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 80px; /* Fixed navbar offset */
+    background-color: #ffffff;
+    color: #333;
+}
+
+body {
+    line-height: 1.7;
+}
+
+/* ========================================
+   Navbar
+   ======================================== */
+.navbar {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    animation: slideDown 1.5s ease-out forwards;
+    background-color: #ffffff !important;
+    transition: all 0.3s ease;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.navbar-brand img {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.08);
+}
+
+/* ========================================
+   Background Colors
+   ======================================== */
+.bg-light-gray {
+    background-color: #f8f9fa !important;
+}
+
+.bg-off-white {
+    background-color: #f5f5f5 !important;
+}
+
+.bg-light-beige {
+    background-color: #fafaf0 !important;
+}
+
+/* Ensure section backgrounds inherit correctly */
+#about, #background, #skills, #portfolio-cv, #contact {
+    background-color: inherit;
+}
+
+/* ========================================
+   About Section
+   ======================================== */
+#about {
+    min-height: 85vh;
+    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+    display: flex;
+    align-items: center;
+}
+
+#about .profile-img {
+    max-width: 100%;
+    height: 500px;
+    border-radius: 14px;
+    border: 4px solid #ffffff;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+#about .profile-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
+}
+
+#about h2 {
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: #222;
+}
+
+#about .lead {
+    font-weight: 500;
+    line-height: 1.6;
+    color: #444;
+    font-size: 1.15rem;
+}
+
+#about p {
+    font-weight: 300;
+    line-height: 1.9;
+    color: #555;
+    font-size: 1.05rem;
+}
+
+#about .btn-outline-primary {
+    font-weight: 500;
+    padding: 12px 28px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+#about .btn-outline-primary:hover {
+    background-color: #0d6efd;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(13, 110, 253, 0.3);
+}
+
+#about .divider {
+    width: 60px;
+    height: 3px;
+    background-color: #0d6efd;
+    margin: 2rem auto;
+    border-radius: 2px;
+}
+
+/* ========================================
+   Background Section
+   ======================================== */
+#background h4 {
+    color: #0d6efd;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+#background .list-group-item {
+    padding: 1.2rem 1.5rem;
+    border-left: 4px solid #0d6efd;
+    background-color: #fdfdfd;
+    margin-bottom: 0.8rem;
+    border-radius: 0 8px 8px 0;
+    transition: all 0.2s ease;
+}
+
+#background .list-group-item:hover {
+    background-color: #f0f7ff;
+    transform: translateX(5px);
+}
+
+/* ========================================
+   Skills Section
+   ======================================== */
+#skills .skill-badge {
+    font-size: 1rem;
+    padding: 0.65rem 1.2rem;
+    margin: 0.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+    background-color: #0d6efd;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+#skills .skill-badge i {
+    font-size: 1.4rem;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+#skills .skill-badge:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+}
+
+/* ========================================
+   Portfolio & CV Section
+   ======================================== */
+#portfolio-cv .card-item {
+    background-color: #ffffff;
+    padding: 2.2rem;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+    text-align: center;
+}
+
+.img-fluid {
+    max-width: 75%;
+    height: auto;
+}
+
+#portfolio-cv .card-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+#portfolio-cv .thumb-img {
+    max-height: 180px;
+    width: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+#portfolio-cv .thumb-img:hover {
+    transform: scale(1.06);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+#portfolio-cv .btn {
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+#portfolio-cv .btn:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   Contact Section
+   ======================================== */
+#contact form {
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+#contact .form-control,
+#contact .form-control-lg {
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 1rem;
+}
+
+#contact .form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 8px rgba(13, 110, 253, 0.4);
+}
+
+#contact .btn {
+    padding: 14px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* ========================================
+   Footer
+   ======================================== */
+footer {
+    background-color: #222;
+    color: #ddd;
+    padding: 3rem 0;
+}
+
+footer a {
+    color: #aaa;
+    font-size: 1.4rem;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #0d6efd !important;
+}
+
+/* ========================================
+   Responsive Adjustments
+   ======================================== */
+@media (max-width: 992px) {
+    #about .profile-img {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+
+    #about {
+        min-height: auto;
+        padding: 4rem 0;
+    }
+
+    #about .lead,
+    #about p {
+        font-size: 1rem;
+    }
+
+    #portfolio-cv .thumb-img {
+        max-height: 140px;
+    }
+
+    .skill-badge {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .skill-badge i {
+        font-size: 1.2rem;
+    }
+
+    #portfolio-cv .card-item {
+        padding: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand img {
+        height: 40px;
+    }
+
+    #about img {
+        width: 160px;
+        height: 160px;
+    }
+
+    #portfolio-cv .d-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #portfolio-cv .text-end {
+        text-align: center !important;
+    }
+}
+
+/* ========================================
+   Badge Default (Override Bootstrap)
+   ======================================== */
+.badge {
+    font-size: 1rem;
+    padding: 0.6em 1.1em;
+    border-radius: 50px;
+}
