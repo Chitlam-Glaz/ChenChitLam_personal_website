@@ -6,6 +6,67 @@
 }
 
 /* -------------------------------------------------
+   PIE CHART SECTION
+   ------------------------------------------------- */
+#vis-piechart {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+}
+
+#vis-piechart h2 {
+    font-weight: 600;
+    padding-top: 60px;
+    margin-bottom: 2.5rem;
+    color: #333;
+}
+
+/* Center + fixed size container */
+.piechart-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+.piechart-container {
+    width: 460px;      /* <-- BIGGER PIE */
+    height: 460px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Ensure canvas fills its container and keeps circle shape */
+#myPieChart {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* -------------------------------------------------
+   RESPONSIVE ADJUSTMENTS
+   ------------------------------------------------- */
+@media (max-width: 768px) {
+    .piechart-container {
+        width: 360px;
+        height: 360px;
+    }
+}
+
+@media (max-width: 576px) {
+    .piechart-container {
+        width: 300px;
+        height: 300px;
+    }
+    #vis-piechart h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Optional: subtle shadow for depth */
+.piechart-container {
+    filter: drop-shadow(0 8px 16px rgba(0,0,0,0.1));
+}
+/* -------------------------------------------------
    1. PHOTOGRAPHY – THUMBNAIL IMAGES (2×2 grid)
    ------------------------------------------------- */
 .video-wrapper.video-sm {
@@ -48,11 +109,88 @@
 }
 
 /* -------------------------------------------------
-   2. DRAWING & ANIMATION – keep existing styles
+   DRAWING & ANIMATION – CENTERED + CAPTION UNDER VIDEO
    ------------------------------------------------- */
-.media-item-lg {
-    max-height: 400px;
+#drawing-animation .media-item-lg {
+    max-height: 420px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+}
+
+#drawing-animation .media-item-lg:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+}
+
+/* Center animation + caption directly below */
+#drawing-animation .video-lg {
+    position: relative;
+    max-height: 420px;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    padding-bottom: 56.25%;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+    background: #000;
+    overflow: hidden;
+    display: inline-block;
+}
+
+#drawing-animation .video-lg:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+}
+
+#drawing-animation .video-lg video {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
+    border-radius: 16px;
+}
+
+/* Caption directly under video */
+#drawing-animation .video-lg figcaption {
+    margin-top: 12px;
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+}
+
+/* Responsive sizing */
+@media (max-width: 992px) {
+    #drawing-animation .media-item-lg,
+    #drawing-animation .video-lg {
+        max-height: 340px;
+        max-width: 340px;
+    }
+}
+
+@media (max-width: 768px) {
+    #drawing-animation .media-item-lg,
+    #drawing-animation .video-lg {
+        max-height: 280px;
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 576px) {
+    #drawing-animation .media-item-lg,
+    #drawing-animation .video-lg {
+        max-height: 240px;
+        max-width: 240px;
+    }
+    #drawing-animation figcaption {
+        font-size: 0.9rem;
+    }
 }
 
 /* -------------------------------------------------
@@ -91,5 +229,103 @@
 @media (max-width: 576px) {
     .video-wrapper.video-sm {
         padding-bottom: 75%;   /* 4:3 on tiny screens */
+    }
+}
+
+/* -------------------------------------------------
+   INTERACTIVE SECTION – 2×2 GRID – SAME SIZE IMAGES
+   ------------------------------------------------- */
+#interactive .media-item-2x2 {
+    width: 100%;
+    height: 380px;                    /* Fixed height */
+    object-fit: cover;                /* Crop to fill */
+    object-position: center;          /* Center crop */
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+    display: block;
+    background: #f0f0f0;              /* Fallback */
+}
+
+#interactive .media-item-2x2:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+}
+
+/* Force same container size */
+#interactive figure {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Image wrapper to maintain aspect */
+#interactive .img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #000;
+}
+
+/* 360 Tour – Overlay Icon */
+#interactive .overlay-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+#interactive figure:hover .overlay-icon {
+    opacity: 1;
+}
+
+/* Caption */
+#interactive figcaption {
+    font-size: 1.1rem;
+    color: #222;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 16px;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive – Same size scaling */
+@media (max-width: 992px) {
+    #interactive .media-item-2x2,
+    #interactive .img-wrapper {
+        height: 320px;
+    }
+}
+
+@media (max-width: 768px) {
+    #interactive .media-item-2x2,
+    #interactive .img-wrapper {
+        height: 280px;
+    }
+}
+
+@media (max-width: 576px) {
+    #interactive .media-item-2x2,
+    #interactive .img-wrapper {
+        height: 240px;
+    }
+    #interactive figcaption {
+        font-size: 1rem;
+        margin-top: 12px;
     }
 }
